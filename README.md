@@ -2,7 +2,7 @@
 
 To begin, click the button on the spreadsheet to input a numerical amount as the benchmark. The VBA program sifts out customers whose total spend is greater than the benchmark, and then displays these customer accounts on a new worksheet called Report, showing each customer's ID and their respective total spend in table format.
 
-Note: If a customer has made repeat orders, the VBA program is designed to sum all the customer's orders before comparing it to the user input benchmark.
+Note: If a customer made repeat orders, the VBA program is designed to sum all the customer's orders before comparing it to the user input benchmark.
 
 
 The VBA program can also:
