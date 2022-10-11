@@ -42,8 +42,8 @@ Public Sub Main()
     Loop Until isValid = True 'Program stops asking user for total amount when input is valid
 
     'Creates new worksheet called Report
-Set wsReport = Worksheets.Add(after:=Worksheets(Worksheets.Count)) 'Add Report after the Data worksheet
-    wsReport.Name = "Report" 'Gives it a name that users can see
+    Set wsReport = Worksheets.Add(after:=Worksheets(Worksheets.Count)) 'Add Report after the Data worksheet
+    wsReport.Name = "Report"
     
     'Formatting the Report worksheet
     With wsReport.Range("A1")
@@ -65,12 +65,12 @@ Set wsReport = Worksheets.Add(after:=Worksheets(Worksheets.Count)) 'Add Report a
     reportCounter = 4 'Keeps track of row in Report
     customerID = wsData.Range("B" & dataCounter).Value
     total = wsData.Range("C" & dataCounter).Value
-    dataCounter = 5 'Update row in Data to 5
+    dataCounter = 5
     With wsData
         For Each cell In .Range("C5", .Range("C5").End(xlDown)) 'Run through amount column
-            If .Range("B" & dataCounter).Value = customerID Then 'Customer ID is same as previous -- sum the amounts
+            If .Range("B" & dataCounter).Value = customerID Then 'If Customer ID is same as previous -- sum the amounts
                 total = total + cell.Value
-            ElseIf Val(total) > Val(userInput) Then 'Customer ID is different -- when previous ID's total is greater than user input, add info to Report
+            ElseIf Val(total) > Val(userInput) Then 'If Customer ID is different -- when previous ID's total is greater than user input, add info to Report
                 wsReport.Range("A" & reportCounter).Value = customerID
                 wsReport.Range("B" & reportCounter).Value = total
                 reportCounter = reportCounter + 1 'Move onto next row in Report
@@ -91,7 +91,7 @@ Set wsReport = Worksheets.Add(after:=Worksheets(Worksheets.Count)) 'Add Report a
 'Sort entries in Report worksheet in descending order by total amount spent
     With wsReport
         .Range("A3", .Range("A3").End(xlDown).End(xlToRight)).Sort Key1:=.Range("B3"), Order1:=xlDescending, Header:=xlYes
-        .Range("B4", .Range("B4").End(xlDown)).NumberFormat = "$#,##" 'Formatting dollar display in amount purchased cell
+        .Range("B4", .Range("B4").End(xlDown)).NumberFormat = "$#,##" 'Formats dollar display in amount purchased cell
     End With
     
 End Sub
