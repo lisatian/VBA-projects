@@ -31,7 +31,7 @@ Public Sub Main()
         End If
     Next
     
-    'Checks if input is valid -- program continues to ask user for input until user input is value
+'Checks if input is valid -- program continues to ask user for input until user input is valid
     Do
         userInput = InputBox("Enter a total amount spent:", "Total amount spent") 'Prompts user for input
         If IsNumeric(userInput) = True And Val(userInput) > 0 Then 'If input is valid
