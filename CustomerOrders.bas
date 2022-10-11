@@ -42,7 +42,7 @@ Public Sub Main()
     Loop Until isValid = True 'Program stops asking user for total amount when input is valid
 
     'Creates new worksheet called Report
-    Set wsReport = Worksheets.Add(after:=Worksheets(Worksheets.Count)) 'After the Data worksheet
+Set wsReport = Worksheets.Add(after:=Worksheets(Worksheets.Count)) 'Add Report after the Data worksheet
     wsReport.Name = "Report" 'Gives it a name that users can see
     
     'Formatting the Report worksheet
@@ -67,7 +67,6 @@ Public Sub Main()
     total = wsData.Range("C" & dataCounter).Value
     dataCounter = 5 'Update row in Data to 5
     With wsData
-        '.Activate 'NOTE: Using the For i To cell count loop is more robust than activating worksheet!!
         For Each cell In .Range("C5", .Range("C5").End(xlDown)) 'Run through amount column
             If .Range("B" & dataCounter).Value = customerID Then 'Customer ID is same as previous -- sum the amounts
                 total = total + cell.Value
