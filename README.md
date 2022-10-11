@@ -8,3 +8,5 @@ Note: If a customer has made repeat orders, the VBA program is designed to sum a
 The VBA program can also:
 - Perform user input validation.
 - Sort the customer orders based on attributes such as date and ID.
+
+To directly view VBA code, see CustomerOrders.bas
