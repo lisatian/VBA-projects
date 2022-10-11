@@ -89,7 +89,7 @@ Public Sub Main()
         .Range("A3", .Range("A3").End(xlDown).End(xlToRight)).Sort Key1:=.Range("A3"), Order1:=xlAscending, Header:=xlYes
     End With
     
-    'Sort entries Report worksheet in descending order by total amount spent
+'Sort entries in Report worksheet in descending order by total amount spent
     With wsReport
         .Range("A3", .Range("A3").End(xlDown).End(xlToRight)).Sort Key1:=.Range("B3"), Order1:=xlDescending, Header:=xlYes
         .Range("B4", .Range("B4").End(xlDown)).NumberFormat = "$#,##" 'Formatting dollar display in amount purchased cell
